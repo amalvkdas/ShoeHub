@@ -1,0 +1,70 @@
+.hero{
+    position: relative;
+    line-height: 40px;
+}
+
+
+.hero img{
+    width: 100%;
+    height: 750px;
+}
+
+.discount-text{
+    color: white;
+    position: absolute;
+    bottom: 250px;
+    left: 200px;
+    
+
+}
+
+.hero h1{
+    font-size: 70px;
+    font-weight: 900;
+}
+
+.sale-title{
+    display: flex;
+    margin-top: 50px;
+    font-size: 25px;
+}
+
+
+.sale-title h3{
+    font-size: 15px;
+}
+
+.sale-title button{
+    margin-left: 20px;
+    padding: 8px;
+    border: 2px solid white;
+    background: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sale-title button:hover{
+    padding-right: 40px;
+    color: black;
+    background-color: white;
+    transition: .4s ease-in-out;
+}
+
+.sale-title button:after {
+    content: '»';
+    position: absolute;
+    text-align: center;
+    font-size: 50px;
+    opacity: 0;  
+    transition: .5s ease-in-out;
+  }
+
+
+.sale-title button:hover:after {
+    opacity: 1;
+    right: 40px;
+  }
+

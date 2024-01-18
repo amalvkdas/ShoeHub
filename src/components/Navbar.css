@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Poppins&display=swap');
+
+
+* {
+    font-family: 'Alice', serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px 0 60px;
+}
+
+.links{
+    flex: 1;
+}
+
+.nav-end {
+    display: flex;
+    justify-content:end;
+    align-items: center;
+    flex: 1; 
+}
+
+
+
+.logo {
+    font-size: 50px;
+    flex: 1;
+    text-align: center;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.nav-end a,
+.links a ,.search{
+    margin-right: 25px;
+    text-decoration: none;
+    color: black;
+}
+
+.links a:hover,.nav-end a:hover{
+    text-decoration: underline;
+}
+
+
+
+.cart img,.wishlist img{
+    width: 25px;
+    height: 25px;
+}
+
+.signin img{
+    width: 20px;
+    height: 20px;
+}
+
+.searchbox{
+    width: 400px;
+    height: 40px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid gray;
+    position: relative;
+    padding: 10px;
+}
+
+
+.search{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    position: relative;
+}
+
+.search img{
+    width: 23px;
+    height: 23px;
+    position: absolute;
+    display: flex;
+    margin: 10px;
+    cursor: pointer;
+}
+
+
+.searchbox::placeholder{
+    padding-left: 1px;
+}
+
+.logout{
+
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logout img{
+    cursor: pointer;
+    width: 22px;
+    height: 22px;
+}
+
+.loginaccount img{
+    width: 30px;
+    height: 30px;
+}

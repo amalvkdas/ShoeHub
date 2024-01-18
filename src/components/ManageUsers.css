@@ -1,0 +1,43 @@
+.userList{
+    margin-left:30px;
+}
+
+.userList h1{
+    margin-bottom: 20px;
+}
+
+.userList li{
+    margin-bottom: 15px;
+}
+
+.userList button{
+    width: 120px;
+    height: 40px;
+    border: none;
+    background-color: black;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    margin: 10px 20px 10px 10px;
+}
+
+.userList input{
+    width: 200px;
+    height: 40px;
+    margin-left: 10px;
+    padding: 10px;
+}
+
+.userList{
+    flex: 1;
+    margin-top: 30px;
+}
+
+.manageusers{
+    display: flex;
+    margin-top: 10px;
+    border-top: 1px solid gray;
+}
+
+
+

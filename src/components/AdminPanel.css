@@ -1,0 +1,52 @@
+.addProduct table {
+    background-color: rgb(250, 243, 235);
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.addProduct{
+    margin-top: 10px;
+}
+
+
+.addProduct h1{
+    margin-left: 40px;
+    margin-bottom: 10px;
+}
+
+.addProductBtn {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.addProductBtn button{
+    width: 120px;
+    height: 40px;
+    border: none;
+    background-color: black;
+    border-radius: 5px;
+    color: white;
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+.addProduct input{
+    width: 90%;
+    height: 40px;
+    padding-left: 20px;
+}
+
+.addproductTitle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.addproductTitle a{
+    margin-right: 50px;
+    text-decoration: none;
+    font-size: 20px;
+}
