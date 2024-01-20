@@ -8,8 +8,9 @@ import { useParams } from "react-router-dom";
 import { useNavigate } from 'react-router-dom'
 
 const ShoeProductPage = () => {
-  const { productId } = useParams();
+  const { category,productId } = useParams();
   const nav = useNavigate()
+
 
 
   const { allShoes, likeProducts, addToCart, setLikeProducts, setAddToCart,isAdmin,isUser } = useContext(MyContext)

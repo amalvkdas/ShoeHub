@@ -172,7 +172,7 @@ const All = () => {
           <li key={index}>
 
             <div className="wrapper">
-            <Link to={`/product/${shoe.id}`} style={{textDecoration:"none",color:"black"}}>
+            <Link to={`/all/${shoe.id}`} style={{textDecoration:"none",color:"black"}}>
               <img src={shoe.img} alt="img" />
               <div className="text">
                 <p>{shoe.title}</p>

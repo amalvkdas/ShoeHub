@@ -87,7 +87,7 @@ const Women = () => {
             
 
             <div className="wrapper">
-            <Link to={`/product/${shoe.id}`} style={{textDecoration:"none",color:"black"}}>
+            <Link to={`/women/${shoe.id}`} style={{textDecoration:"none",color:"black"}}>
               <img src={shoe.img} alt="img" />
               <div className="text">
                 <p>{shoe.title}</p>

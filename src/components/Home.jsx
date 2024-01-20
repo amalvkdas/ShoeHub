@@ -3,6 +3,7 @@ import Navbar from './Navbar'
 import Hero from './Hero'
 import PopularBrands from './PopularBrands'
 import Footer from './Footer'
+import Breadcrumbs from './Breadcrumbs'
 
 
 const Home = () => {
@@ -11,6 +12,7 @@ const Home = () => {
     <>
       <DeliveryBar />
       <Navbar />
+      <Breadcrumbs/>
       <Hero />
       <PopularBrands />
       <Footer />

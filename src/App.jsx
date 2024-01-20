@@ -59,7 +59,7 @@ function App() {
         <MyContext.Provider value={values}>
           <ScrollToTop/>
         <Routes>
-        <Route path="/product/:productId" element={<ShoeProductPage />}></Route>
+        <Route path="/:category/:productId" element={<ShoeProductPage />}></Route>
           <Route path="/" element={<Home />}></Route>
           <Route path="/women" element={<Women />}></Route>
           <Route path="/men" element={<Men />}></Route>
@@ -72,7 +72,6 @@ function App() {
           <Route path="/adminpanel" element={<AdminPanel/>}></Route>
           <Route path="/logout" element={<Logout/>}></Route>
           <Route path="/manageusers" element={<ManageUsers/>}></Route>
-          <Route path="/product" element={<ShoeProductPage/>}></Route>
           <Route path="/userprofile" element={<UserProfile/>}></Route>
           <Route path="/adminprofile" element={<AdminProfile/>}></Route>
         </Routes>

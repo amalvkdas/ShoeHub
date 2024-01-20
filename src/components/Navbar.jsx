@@ -4,6 +4,7 @@ import { useNavigate, useLocation } from 'react-router-dom'
 import { useContext } from 'react'
 import { MyContext } from '../Context'
 import ShoeProductPage from './ShoeProductPage'
+import Breadcrumbs from './Breadcrumbs'
 
 
 
@@ -32,6 +33,7 @@ const Navbar = ({ onSearch }) => {
 
 
     return (
+        <>
         <div className="navbar">
             <div className="links">
                 <Link to="/all">All</Link>
@@ -85,6 +87,9 @@ const Navbar = ({ onSearch }) => {
             </div>
 
         </div>
+        <Breadcrumbs/>
+        </>
+
     )
 }
 
