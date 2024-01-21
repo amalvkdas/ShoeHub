@@ -4,12 +4,12 @@
     flex-wrap: wrap;
 }
 
-.addProduct{
+.addProduct {
     margin-top: 10px;
 }
 
 
-.addProduct h1{
+.addProduct h1 {
     margin-left: 40px;
     margin-bottom: 10px;
 }
@@ -22,7 +22,7 @@
     margin-top: 10px;
 }
 
-.addProductBtn button{
+.addProductBtn button {
     width: 120px;
     height: 40px;
     border: none;
@@ -33,20 +33,33 @@
     cursor: pointer;
 }
 
-.addProduct input{
+.addProduct input {
     width: 90%;
     height: 40px;
     padding-left: 20px;
 }
 
-.addproductTitle{
+.addproductTitle {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.addproductTitle a{
+.addproductTitle a {
     margin-right: 50px;
     text-decoration: none;
     font-size: 20px;
+}
+
+.editRemovebtns button{
+    width: 110px;
+    height: 40px;
+    outline: none;
+    border: none;
+    background-color: black;
+    font-size: 13px;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-right: 20px;
 }

@@ -3,7 +3,6 @@ import './Navbar.css'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useContext } from 'react'
 import { MyContext } from '../Context'
-import ShoeProductPage from './ShoeProductPage'
 import Breadcrumbs from './Breadcrumbs'
 
 
@@ -27,7 +26,6 @@ const Navbar = ({ onSearch }) => {
     const shouldRenderSearchInput =
         pathname !== '/register' &&
         pathname !== '/signin' &&
-        !pathname.startsWith('/product') &&
         pathname !== '/' &&
         pathname !== '/userprofile';
 

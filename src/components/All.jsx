@@ -1,11 +1,13 @@
 import Navbar from "./Navbar"
 import { useContext } from "react"
-import { useState ,useEffect } from "react"
+import { useState, useEffect } from "react"
 import { MyContext } from "../Context"
 import './All.css'
 import Footer from "./Footer"
-import { Link ,useLocation} from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import { useNavigate } from 'react-router-dom'
+import LikeBtn from "./LikeBtn"
+import AddToCartBtn from "./AddToCartBtn"
 
 
 
@@ -16,7 +18,7 @@ const All = () => {
 
 
 
-  const { allShoes, likeProducts, setLikeProducts, addToCart, setAddToCart, setSearchQuery,isAdmin,isUser } = useContext(MyContext)
+  const { allShoes, setSearchQuery } = useContext(MyContext)
 
   const [filteredProducts, setFilteredProducts] = useState(allShoes)
 
@@ -24,36 +26,6 @@ const All = () => {
   const location = useLocation();
 
   const nav = useNavigate()
-
-  const handleLike = (products) => {
-    if(isAdmin || isUser){
-    if (likeProducts.includes(products)) {
-      setLikeProducts(likeProducts.filter((shoe) => shoe !== products))
-    } else {
-      setLikeProducts([...likeProducts, products])
-    }
-  }
-  else{
-    alert("Your are not logged in! Please Login to continue")
-    nav("/signin")
-  }
-  }
-
-  const handleCart = (product) => {
-    if(isAdmin || isUser){
-    if (addToCart.includes(product)) {
-    }
-    else {
-      setAddToCart([...addToCart, product])
-    }
-  }
-  else{
-    alert("Your are not logged in! Please Login to continue")
-    nav("/signin")
-  }
-
-  }
-
 
   const handleSearch = (query) => {
     setSearchQuery(query);
@@ -172,29 +144,23 @@ const All = () => {
           <li key={index}>
 
             <div className="wrapper">
-            <Link to={`/all/${shoe.id}`} style={{textDecoration:"none",color:"black"}}>
-              <img src={shoe.img} alt="img" />
-              <div className="text">
-                <p>{shoe.title}</p>
-                <p>{shoe.company}</p>
-                <p>{shoe.category}</p>
-                <p>{shoe.newPrice}</p>
-              </div>
+              <Link to={`/all/${shoe.id}`} style={{ textDecoration: "none", color: "black" }}>
+                <div className="wrapper-img">
+                  <img src={shoe.img} alt="img" />
+                </div>
+                <div className="text">
+                  <p>{shoe.title}</p>
+                  <p>{shoe.company}</p>
+                  <p>{shoe.category}</p>
+                  <p>{shoe.newPrice}</p>
+                </div>
               </Link>
-              <button onClick={() => handleLike(shoe)} className="btn1">
-                {
-                  likeProducts.includes(shoe) ? "unlike" : "like"
-                }
-              </button>
-              <button onClick={() => handleCart(shoe)} className="btn2">
-                {
-                  addToCart.includes(shoe) ? "Added to Cart" : "Add to Cart"
-                }
-              </button>
+              <div className="btns">
+                <LikeBtn shoe={shoe} />
+                <AddToCartBtn shoe={shoe} />
+              </div>
 
             </div>
-            
-
           </li>
         ))}
       </div>

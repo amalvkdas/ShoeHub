@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import Navbar from './Navbar'
 import './ShoeProductPage.css'
 import Footer from './Footer'
@@ -6,48 +5,20 @@ import { useContext } from 'react'
 import { MyContext } from '../Context'
 import { useParams } from "react-router-dom";
 import { useNavigate } from 'react-router-dom'
+import LikeBtn from "./LikeBtn"
+import AddToCartBtn from "./AddToCartBtn"
 
 const ShoeProductPage = () => {
-  const { category,productId } = useParams();
+  const { productId } = useParams();
   const nav = useNavigate()
 
 
 
-  const { allShoes, likeProducts, addToCart, setLikeProducts, setAddToCart,isAdmin,isUser } = useContext(MyContext)
+  const { allShoes } = useContext(MyContext)
 
 
 
-const clickedProduct = [...allShoes.filter((shoe) => shoe.id === productId)]
-
-
-  const handleLike = (products) => {
-    if(isAdmin || isUser){
-    if (likeProducts.includes(products)) {
-      setLikeProducts(likeProducts.filter((shoe) => shoe !== products))
-    } else {
-      setLikeProducts([...likeProducts, products])
-    }
-  }
-  else{
-    alert("Your are not logged in! Please Login to continue")
-    nav("/signin")
-  }
-  }
-
-  const handleCart = (product) => {
-    if(isAdmin || isUser){
-    if (addToCart.includes(product)) {
-    }
-    else {
-      setAddToCart([...addToCart, product])
-    }
-  }
-  else{
-    alert("Your are not logged in! Please Login to continue")
-    nav("/signin")
-  }
-
-  }
+  const clickedProduct = [...allShoes.filter((shoe) => shoe.id === productId)]
 
 
   return (
@@ -56,7 +27,9 @@ const clickedProduct = [...allShoes.filter((shoe) => shoe.id === productId)]
       {clickedProduct.map((shoe, index) =>
         <div className="productPage" key={index}>
           <div className="productImg" >
-            <img src={shoe.img} alt="" />
+            <div className="wrapper-img">
+              <img src={shoe.img} alt="img" />
+            </div>
           </div>
           <div className="productDetails">
             <h1>{shoe.title}</h1>
@@ -66,16 +39,10 @@ const clickedProduct = [...allShoes.filter((shoe) => shoe.id === productId)]
             </div>
             <h4>{shoe.category}</h4>
             <div className="productDetailsBtns">
-              <button onClick={() => handleLike(shoe)} className="btn1">
-                {
-                  likeProducts.includes(shoe) ? "unlike" : "like"
-                }
-              </button>
-              <button onClick={() => handleCart(shoe)} className="btn2">
-                {
-                  addToCart.includes(shoe) ? "Added to Cart" : "Add to Cart"
-                }
-              </button>
+              <div className="btns">
+                <LikeBtn shoe={shoe} />
+                <AddToCartBtn shoe={shoe} />
+              </div>
               <div className="buynow">
                 <button>Buy Now</button>
               </div>

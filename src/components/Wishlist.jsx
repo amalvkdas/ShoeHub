@@ -3,14 +3,13 @@ import { useContext } from 'react'
 import { MyContext } from '../Context'
 import { useState } from 'react'
 import { useEffect } from 'react'
+import AddToCartBtn from './AddToCartBtn'
+import LikeBtn from './LikeBtn'
 
 const Wishlist = () => {
 
-  const { likeProducts, setLikeProducts,setSearchQuery } = useContext(MyContext)
+  const { likeProducts, setLikeProducts, setSearchQuery } = useContext(MyContext)
 
-  const handleUnlike = (product) => {
-    setLikeProducts(likeProducts.filter((shoe) => shoe !== product))
-  }
 
 
   const [originalWishlistProducts, setOriginalWishlistProducts] = useState(likeProducts);
@@ -25,8 +24,8 @@ const Wishlist = () => {
       const { title, company, category } = product
       return (
         title.toLowerCase().includes(query.toLowerCase()) ||
-          company.toLowerCase().includes(query.toLowerCase()) ||
-          category.toLowerCase().includes(query.toLowerCase())
+        company.toLowerCase().includes(query.toLowerCase()) ||
+        category.toLowerCase().includes(query.toLowerCase())
       )
     })
     setLikeProducts(filteredWishlistResults)
@@ -34,21 +33,15 @@ const Wishlist = () => {
   };
 
 
-
-
-
-
-
-
   return (
     <>
-      <Navbar onSearch={handleSearch}/>
+      <Navbar onSearch={handleSearch} />
 
 
       <div className="container">
 
         {likeProducts.length === 0 ? (
-          <p style={{width:"100%",height:"70vh",justifyContent:"center",display:"flex",alignItems:"center"}} >Your wishlist is empty</p>
+          <p style={{ width: "100%", height: "70vh", justifyContent: "center", display: "flex", alignItems: "center" }} >Your wishlist is empty</p>
         ) : (
 
 
@@ -57,14 +50,19 @@ const Wishlist = () => {
             <li key={index}>
 
               <div className="wrapper">
-                <img src={shoe.img} alt="img" />
+                <div className="wrapper-img">
+                  <img src={shoe.img} alt="img" />
+                </div>
                 <div className="text">
                   <p>{shoe.title}</p>
                   <p>{shoe.company}</p>
                   <p>{shoe.category}</p>
                   <p>{shoe.newPrice}</p>
                 </div>
-                <button onClick={() => handleUnlike(shoe)}>Unlike</button>
+                <div className="btns">
+                  <LikeBtn shoe={shoe} />
+                  <AddToCartBtn shoe={shoe} />
+                </div>
 
               </div>
 

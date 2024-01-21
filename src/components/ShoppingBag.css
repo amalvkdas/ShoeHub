@@ -2,13 +2,11 @@
   display: flex;
   justify-content: left;
   align-items: center;
+  margin-bottom: 10px;
 }
 
 .quantity h4{
   margin-right: 30px;
-}
-.quantity h3{
-  margin: 0 10px 0 10px;
 }
 
 .wrapper2 {
@@ -16,7 +14,7 @@
   object-fit: cover;
 }
 
-.wrapper2 img {
+.wrapper-img img {
   width: 100%;
   height: 200px;
   padding: 20px;
@@ -50,7 +48,7 @@
   list-style: none;
 }
 
-.wrapper2 button,.totalprice button {
+.totalprice button {
   width: 110px;
   height: 40px;
   outline: none;
@@ -60,6 +58,7 @@
   color: white;
   cursor: pointer;
   margin-top: 10px;
+  margin-right: 10px;
 }
 
 .quantity button{
@@ -108,6 +107,6 @@ td{
 
 
 .quantity span{
-  margin: 0 10px 0 10px;
+  margin: 10px;
 }
 

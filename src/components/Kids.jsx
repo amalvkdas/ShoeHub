@@ -5,12 +5,14 @@ import { MyContext } from '../Context'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
+import LikeBtn from "./LikeBtn"
+import AddToCartBtn from "./AddToCartBtn"
 
 const Kids = () => {
 
 
 
-  const { allShoes, likeProducts, addToCart, setLikeProducts, setAddToCart, setSearchQuery ,isAdmin,isUser} = useContext(MyContext)
+  const { allShoes,setSearchQuery} = useContext(MyContext)
 
   const filteredKidsProduct = allShoes.filter((products) => products.gender.toLowerCase() === "male")
 
@@ -43,45 +45,6 @@ const Kids = () => {
 
 
 
-
-
-
-  const handleLike = (products) => {
-    if(isAdmin || isUser){
-    if (likeProducts.includes(products)) {
-      setLikeProducts(likeProducts.filter((shoe) => shoe !== products))
-    } else {
-      setLikeProducts([...likeProducts, products])
-    }
-  }
-  else{
-    alert("Your are not logged in! Please Login to continue")
-    nav("/signin")
-  }
-  }
-
-  const handleCart = (product) => {
-    if(isAdmin || isUser){
-    if (addToCart.includes(product)) {
-    }
-    else {
-      setAddToCart([...addToCart, product])
-    }
-  }
-  else{
-    alert("Your are not logged in! Please Login to continue")
-    nav("/signin")
-  }
-
-  }
-
-
-
-
-
-
-
-
   return (
     <>
       <Navbar onSearch={handleSearch} />
@@ -94,7 +57,9 @@ const Kids = () => {
 
               <div className="wrapper">
               <Link to={`/kids/${shoe.id}`} style={{ textDecoration: "none", color: "black" }}>
-                <img src={shoe.img} alt="img" />
+              <div className="wrapper-img">
+                  <img src={shoe.img} alt="img" />
+                </div>
                 <div className="text">
                   <p>{shoe.title}</p>
                   <p>{shoe.company}</p>
@@ -102,19 +67,10 @@ const Kids = () => {
                   <p>{shoe.newPrice}</p>
                 </div>
                 </Link>
-
-                
-                <button onClick={() => handleLike(shoe)} className="btn1">
-                  {
-                    likeProducts.includes(shoe) ? "unlike" : "like"
-                  }
-                </button>
-                <button onClick={() => handleCart(shoe)} className="btn2">
-                  {
-                    addToCart.includes(shoe) ? "Added to Cart" : "Add to Cart"
-                  }
-                </button>
-
+                <div className="btns">
+                <LikeBtn shoe={shoe} />
+                <AddToCartBtn shoe={shoe} />
+              </div>
               </div>
             
 

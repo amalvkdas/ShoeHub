@@ -277,33 +277,29 @@ const All = () => {
 
       </div>
 
-
-
-
-
-
-
-
-
       <div className="container">
         {filteredProducts.map((shoe, index) => (
 
           <li key={index}>
 
             <div className="wrapper">
-              <img src={shoe.img} alt="img" />
+              <div className="wrapper-img">
+                <img src={shoe.img} alt="img" />
+              </div>
               <div className="text">
                 <p>{shoe.title}</p>
                 <p>{shoe.company}</p>
                 <p>{shoe.category}</p>
                 <p>{shoe.newPrice}</p>
               </div>
-              <button type="button" onClick={() => handleEditShoe(index)} className="btn1">
-                Edit
-              </button>
-              <button type="button" onClick={() => handleRemoveShoe(index)} className="btn2">
-                Remove
-              </button>
+              <div className="editRemovebtns">
+                <button type="button" onClick={() => handleEditShoe(index)} className="btn1">
+                  Edit
+                </button>
+                <button type="button" onClick={() => handleRemoveShoe(index)} className="btn2">
+                  Remove
+                </button>
+              </div>
 
             </div>
 

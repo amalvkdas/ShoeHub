@@ -1,0 +1,12 @@
+.unlikeBtn button {
+    width: 110px;
+    height: 40px;
+    outline: none;
+    border: none;
+    background-color: black;
+    font-size: 13px;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-right: 20px;
+  }
