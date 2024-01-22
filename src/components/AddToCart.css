@@ -1,12 +1,29 @@
-.unlikeBtn button {
-    width: 110px;
-    height: 40px;
-    outline: none;
-    border: none;
-    background-color: black;
-    font-size: 13px;
-    color: white;
-    cursor: pointer;
-    margin-top: 10px;
-    margin-right: 20px;
-  }
+.addToCart button {
+  width: 110px;
+  height: 40px;
+  outline: none;
+  border: none;
+  font-size: 13px;
+  background: none;
+  cursor: pointer;
+  margin-top: 15px;
+  margin-right: 20px;
+}
+
+.addToCart img {
+  width: 40px;
+  height: 40px;
+}
+
+.remove button {
+  width: 110px;
+  height: 40px;
+  outline: none;
+  border: none;
+  background-color: black;
+  font-size: 13px;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-right: 20px;
+}

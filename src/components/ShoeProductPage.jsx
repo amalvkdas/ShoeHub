@@ -39,7 +39,7 @@ const ShoeProductPage = () => {
             </div>
             <h4>{shoe.category}</h4>
             <div className="productDetailsBtns">
-              <div className="btns">
+              <div className="btns1">
                 <LikeBtn shoe={shoe} />
                 <AddToCartBtn shoe={shoe} />
               </div>

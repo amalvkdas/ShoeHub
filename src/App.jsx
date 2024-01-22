@@ -8,8 +8,6 @@ import { Users } from "./db/Users"
 import { Admins } from "./db/Admins"
 
 
-
-
 import Home from "./components/Home"
 import Women from "./components/Women"
 import Men from "./components/Men"
@@ -35,7 +33,7 @@ function App() {
   const [user,setUser] = useState(Users)
   const [admin,setAdmin] = useState(Admins)
   const [isAdmin,setIsAdmin] = useState(false)
-  const [isUser,setIsUser] = useState(false)
+  const [isUser,setIsUser] = useState(true)
 
   const [allShoes, setAllShoes] = useState(AllShoesInitial);
 

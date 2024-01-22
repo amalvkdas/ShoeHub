@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { MyContext } from '../Context';
 import Navbar from './Navbar';
 import './ShoppingBag.css';
-import LikeBtn from './LikeBtn';
+import { Link } from 'react-router-dom'
 import AddToCartBtn from './AddToCartBtn';
 
 const ShoppingBag = () => {
@@ -55,23 +55,24 @@ const ShoppingBag = () => {
             addToCart.map((shoe, index) => (
               <li key={index} style={{ listStyle: 'none' }}>
                 <div className="wrapper2">
-                  <div className="wrapper-img">
-                    <img src={shoe.img} alt="img" />
-                  </div>
-                  <div className="text">
-                    <p>{shoe.title}</p>
-                    <p>{shoe.company}</p>
-                    <p>{shoe.category}</p>
-                    <p>{shoe.newPrice}</p>
-                  </div>
+                  <Link to={`/shoppingbag/${shoe.id}`} style={{ textDecoration: "none", color: "black" }}>
+                    <div className="wrapper-img">
+                      <img src={shoe.img} alt="img" />
+                    </div>
+                    <div className="text">
+                      <p>{shoe.title}</p>
+                      <p>{shoe.company}</p>
+                      <p>{shoe.category}</p>
+                      <p>{shoe.newPrice}</p>
+                    </div>
+                  </Link>
                   <div className="quantity">
                     <h4>Quantity :</h4>
                     <button onClick={() => handleQuantityChange(shoe, Math.max((shoe.quantity || 1) - 1, 1))}>-</button>
                     <span>{shoe.quantity || 1}</span>
                     <button onClick={() => handleQuantityChange(shoe, (shoe.quantity || 1) + 1)}>+</button>
                   </div>
-                  <div className="btns">
-                    <LikeBtn shoe={shoe} />
+                  <div className="removBtn">
                     <AddToCartBtn shoe={shoe} />
                   </div>
                 </div>

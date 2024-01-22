@@ -37,16 +37,18 @@ const AddToCartBtn = ({ shoe }) => {
   
 
   return (
-    <div className="unlikeBtn">
+    <div className="addToCart">
       {
         pathname !== '/shoppingbag' ? (
       <button onClick={() => handleCart(shoe)}>
         {
-          addToCart.includes(shoe) ? "Added to Cart" : "Add to Cart"
+          addToCart.includes(shoe) ? <img src="/addedToCart.png" alt="Added to Cart" /> : <img src="/addToCart.png" alt="Add to Cart" />
         }
       </button>
         ):(
+          <div className="remove">
           <button onClick={() => handleRemove(shoe)}>Remove</button>
+          </div>
         )
 }
     </div>

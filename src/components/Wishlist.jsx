@@ -4,6 +4,7 @@ import { MyContext } from '../Context'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import AddToCartBtn from './AddToCartBtn'
+import { Link } from 'react-router-dom'
 import LikeBtn from './LikeBtn'
 
 const Wishlist = () => {
@@ -50,18 +51,19 @@ const Wishlist = () => {
             <li key={index}>
 
               <div className="wrapper">
-                <div className="wrapper-img">
-                  <img src={shoe.img} alt="img" />
-                </div>
-                <div className="text">
-                  <p>{shoe.title}</p>
-                  <p>{shoe.company}</p>
-                  <p>{shoe.category}</p>
-                  <p>{shoe.newPrice}</p>
-                </div>
+                <Link to={`/wishlist/${shoe.id}`} style={{ textDecoration: "none", color: "black" }}>
+                  <div className="wrapper-img">
+                    <img src={shoe.img} alt="img" />
+                  </div>
+                  <div className="text">
+                    <p>{shoe.title}</p>
+                    <p>{shoe.company}</p>
+                    <p>{shoe.category}</p>
+                    <p>{shoe.newPrice}</p>
+                  </div>
+                </Link>
                 <div className="btns">
                   <LikeBtn shoe={shoe} />
-                  <AddToCartBtn shoe={shoe} />
                 </div>
 
               </div>
