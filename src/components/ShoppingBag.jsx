@@ -15,15 +15,16 @@ const ShoppingBag = () => {
     setAddToCart(originalCartProducts);
   }, [originalCartProducts]);
 
+
   const handleQuantityChange = (shoe, newQuantity) => {
     const updatedCart = addToCart.map((item) => {
       if (item === shoe) {
-        return { ...item, quantity: newQuantity };
+        item.quantity = newQuantity;
       }
       return item;
     });
-
-    setOriginalCartProducts(updatedCart);
+  
+    setAddToCart(updatedCart);
   };
 
   const handleSearch = (query) => {
