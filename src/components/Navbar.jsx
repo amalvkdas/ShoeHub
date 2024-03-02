@@ -41,7 +41,7 @@ const Navbar = ({ onSearch }) => {
                 {isAdmin && pathname === '/' && <Link to="/adminpanel">AdminPanel</Link>}
             </div>
             <div className="logo" onClick={() => nav("/")}>
-                SHOEHUB
+                SHOEHUB-Demo
             </div>
             <div className="nav-end">
                 {shouldRenderSearchInput && <div className="search">
